@@ -1,2 +1,2 @@
-# Andoroid_Project
 # Android_Project
+Синица Михаил ИКС-433
