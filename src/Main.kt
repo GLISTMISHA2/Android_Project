@@ -71,10 +71,12 @@ fun main(){
 
     println("============================================")
 
-    val timeSteps = 10
-    for (step in 1..timeSteps) {
-        println("\nШаг $step:")
-        println("---------")
-        people.forEach { it.move() }
+    val time_steps = 10
+    for (step in 1..time_steps) {
+        println("\nСекунда $step:")
+        println("_____________________________________________")
+        for (person in people) {
+            person.move()
+        }
     }
 }
