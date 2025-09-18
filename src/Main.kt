@@ -1,12 +1,27 @@
 import kotlin.random.Random
 
-class Human
+open class Human
 {
     var fio: String = ""
+        get() = field
+        set(value){field =value}
+
     var age: Int = 0
+        get() = field
+        set(value){field =value}
+
     var curSpeed: Double = 0.0
+        get() = field
+        set(value){field =value}
+
     var x = 0.0
+        get() = field
+        set(value){field =value}
+
     var y = 0.0
+        get() = field
+        set(value){field =value}
+
 
     constructor(_fio: String, _age: Int, _speed: Double){
         fio = _fio
@@ -24,7 +39,6 @@ class Human
 
         println("$fio переместился в (${"%.1f".format(x)}, ${"%.1f".format(y)})")
     }
-
 }
 
 fun main(){
@@ -63,5 +77,4 @@ fun main(){
         println("---------")
         people.forEach { it.move() }
     }
-
 }
