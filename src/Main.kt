@@ -19,8 +19,8 @@ fun main(){
 
     println("============================================")
 
-    val time_steps=10
-    for (step in 1..time_steps) {
+    val time=10
+    for (step in 1..time) {
         println("\nСекунда $step:")
         println("_____________________________________________")
 
