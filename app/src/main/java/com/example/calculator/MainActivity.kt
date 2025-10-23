@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
     var num2: String = ""
     var operator: String = ""
     lateinit var result: TextView
-    var flag_comma1: Boolean = true
-    var flag_comma2: Boolean = true
+    var flag1: Boolean = true
+    var flag2: Boolean = true
 
     var Colorr = 0
 
@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             } else if (Colorr == 1) {
                 result.setTextColor(Color.rgb(0, 255, 0))
                 Colorr = 2
+            } else if (Colorr == 2) {
+                result.setTextColor(Color.rgb(0, 0, 255))
+                Colorr = 3
             } else {
                 result.setTextColor(Color.rgb(0, 0, 0))
                 Colorr = 0
@@ -81,19 +84,19 @@ class MainActivity : AppCompatActivity() {
 
     fun addnum(dig: String) {
         if (operator.isEmpty()) {
-            if (dig == "." && !flag_comma1) {
+            if (dig == "." && !flag1) {
             } else {
                 if (dig == ".") {
-                    flag_comma1 = false
+                    flag1 = false
                 }
                 num1 += dig
                 result.text = num1
             }
         } else {
-            if (dig == "." && !flag_comma2) {
+            if (dig == "." && !flag2) {
             } else {
                 if (dig == ".") {
-                    flag_comma2 = false
+                    flag2 = false
                 }
                 num2 += dig
                 result.text = num1 + operator + num2
@@ -121,8 +124,8 @@ class MainActivity : AppCompatActivity() {
                 num1 = ""
                 num2 = ""
                 operator = ""
-                flag_comma1 = true
-                flag_comma2 = true
+                flag1 = true
+                flag2 = true
                 return
             }
 
@@ -151,8 +154,8 @@ class MainActivity : AppCompatActivity() {
     fun clear() {
         num1 = ""
         num2 = ""
-        flag_comma1 = true
-        flag_comma2 = true
+        flag1 = true
+        flag2 = true
         operator = ""
         result.text = ""
         Colorr = 0
