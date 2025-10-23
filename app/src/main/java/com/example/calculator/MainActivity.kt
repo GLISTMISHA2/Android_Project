@@ -155,5 +155,6 @@ class MainActivity : AppCompatActivity() {
         flag_comma2 = true
         operator = ""
         result.text = ""
+        Colorr = 0
     }
 }
