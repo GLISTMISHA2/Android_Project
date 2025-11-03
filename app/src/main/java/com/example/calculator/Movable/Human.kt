@@ -1,3 +1,4 @@
+package com.example.calculator
 import kotlin.random.Random
 
 open class Human:Movable{
