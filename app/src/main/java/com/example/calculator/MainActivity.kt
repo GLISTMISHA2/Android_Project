@@ -10,6 +10,7 @@ import android.graphics.Color
 class MainActivity : AppCompatActivity() {
     var num1: String = ""
     var num2: String = ""
+
     var operator: String = ""
     lateinit var result: TextView
     var flag1: Boolean = true
