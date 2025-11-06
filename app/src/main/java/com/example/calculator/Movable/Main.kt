@@ -1,3 +1,5 @@
+package com.example.calculator
+
 import kotlin.concurrent.thread
 
 fun main(){

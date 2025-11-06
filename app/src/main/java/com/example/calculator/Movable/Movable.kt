@@ -1,3 +1,4 @@
+package com.example.calculator
 interface Movable{
 
     var curSpeed: Double
