@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.graphics.Color
+import kotlin.random.Random
 class Calc : AppCompatActivity() {
     var num1: String = ""
     var num2: String = ""
@@ -17,7 +18,6 @@ class Calc : AppCompatActivity() {
     var flag1: Boolean = true
     var flag2: Boolean = true
 
-    var Colorr = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,19 +32,7 @@ class Calc : AppCompatActivity() {
         result = findViewById(R.id.result)
 
         result.setOnClickListener {
-            if (Colorr == 0) {
-                result.setTextColor(Color.rgb(255, 0, 0))
-                Colorr = 1
-            } else if (Colorr == 1) {
-                result.setTextColor(Color.rgb(0, 255, 0))
-                Colorr = 2
-            } else if (Colorr == 2) {
-                result.setTextColor(Color.rgb(0, 0, 255))
-                Colorr = 3
-            } else {
-                result.setTextColor(Color.rgb(0, 0, 0))
-                Colorr = 0
-            }
+            result.setTextColor(Color.rgb(Random.nextInt(0,255), Random.nextInt(0,255), Random.nextInt(0,255)))
         }
         val button_0 = findViewById<Button>(R.id.button_0)
         val button_1 = findViewById<Button>(R.id.button_1)
@@ -160,6 +148,5 @@ class Calc : AppCompatActivity() {
         flag2 = true
         operator = ""
         result.text = ""
-        Colorr = 0
     }
 }
