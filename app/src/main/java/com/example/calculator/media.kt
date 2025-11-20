@@ -38,27 +38,25 @@ class media : AppCompatActivity() {
     ) { isGranted ->
         if (isGranted) {
             Toast.makeText(this, "Разрешение получено", Toast.LENGTH_SHORT).show()
-            loadMusicFiles()
-            showMusicList()
+            load_Music_Files()
+            show_Music_List()
         } else {
             Toast.makeText(this, "Нужно разрешение для доступа к музыке", Toast.LENGTH_LONG).show()
         }
     }
 
-    fun loadMusicFiles() {
+    fun load_Music_Files() {
         val download = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)
-        if (download.exists()) {
-            download.listFiles()?.forEach { file ->
-                if (file.name.endsWith(".mp3")) {
-                    musicFiles.add(file)
-                }
+        download.listFiles()?.forEach { file ->
+            if (file.name.endsWith(".mp3")) {
+                musicFiles.add(file)
             }
         }
     }
 
-    fun showMusicList() {
+    fun show_Music_List() {
         val adapter = ArrayAdapter(
-            this,android.R.layout.simple_list_item_1, musicFiles.map {it.nameWithoutExtension })
+            this,android.R.layout.simple_list_item_1, musicFiles.map { it.nameWithoutExtension })
         song_list.adapter =adapter
     }
 
@@ -89,14 +87,10 @@ class media : AppCompatActivity() {
 
         seekBar_Vol.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                if (fromUser) {
                     audio_manager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0)
-                }
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar) {
             }
-
             override fun onStopTrackingTouch(seekBar: SeekBar) {
             }
         })
@@ -161,6 +155,7 @@ class media : AppCompatActivity() {
             Play = false
             seekBar.progress = 0
             current_time.text = "0:00"
+            song_poz = 0
         }
         fun next(){
             if(song_poz<musicFiles.size-1){
@@ -205,9 +200,16 @@ class media : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        if (::audio_manager.isInitialized) {
+        if (::audio_manager.isInitialized){
             val currentVolume = audio_manager.getStreamVolume(AudioManager.STREAM_MUSIC)
             seekBar_Vol.progress = currentVolume
+        }
+    }
+    override fun onPause() {
+        super.onPause()
+        if (::mediaPlayer.isInitialized && mediaPlayer.isPlaying){
+            mediaPlayer.pause()
+            Play = false
         }
     }
 }
