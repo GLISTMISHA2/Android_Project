@@ -37,7 +37,7 @@ class media : AppCompatActivity() {
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            Toast.makeText(this, "Разрешение получено", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Разрешение получено", Toast.LENGTH_LONG).show()
             load_Music_Files()
             show_Music_List()
         } else {
@@ -47,7 +47,7 @@ class media : AppCompatActivity() {
 
     fun load_Music_Files() {
         val download = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)
-        download.listFiles()?.forEach { file ->
+        download.listFiles().forEach { file ->
             if (file.name.endsWith(".mp3")) {
                 musicFiles.add(file)
             }
@@ -77,9 +77,8 @@ class media : AppCompatActivity() {
         }, 1000)
     }
 
-    fun setupVolumeSeekBar() {
+    fun Volume_SeekBar() {
         val max_Volume = audio_manager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
-
         val current_Volume = audio_manager.getStreamVolume(AudioManager.STREAM_MUSIC)
 
         seekBar_Vol.max = max_Volume
@@ -120,7 +119,7 @@ class media : AppCompatActivity() {
         song_list = findViewById(R.id.songs_ListView)
         mediaPlayer = MediaPlayer()
         audio_manager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        setupVolumeSeekBar()
+        Volume_SeekBar()
 
         fun play_select_song(position: Int) {
             val file = musicFiles[position]
