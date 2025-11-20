@@ -33,8 +33,7 @@ class media : AppCompatActivity() {
     var handler = Handler()
     lateinit var audio_manager: AudioManager
 
-    private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
+    val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
             Toast.makeText(this, "Разрешение получено", Toast.LENGTH_LONG).show()
@@ -199,17 +198,13 @@ class media : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        if (::audio_manager.isInitialized){
             val currentVolume = audio_manager.getStreamVolume(AudioManager.STREAM_MUSIC)
             seekBar_Vol.progress = currentVolume
-        }
     }
     override fun onPause() {
         super.onPause()
-        if (::mediaPlayer.isInitialized && mediaPlayer.isPlaying){
             mediaPlayer.pause()
             Play = false
-        }
     }
 }
 
