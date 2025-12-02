@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
         var Button_calculator = findViewById<Button>(R.id.Button_сalculator)
         var Button_mediaplayer = findViewById<Button>(R.id.Button_mediaplayer)
+        var Button_locator = findViewById<Button>(R.id.Button_geo)
 
         Button_calculator.setOnClickListener({
             startActivity(Intent(this, Calc::class.java))
@@ -29,5 +30,9 @@ class MainActivity : AppCompatActivity() {
         Button_mediaplayer.setOnClickListener({
             startActivity(Intent(this, media::class.java))
         })
+        Button_locator.setOnClickListener({
+            startActivity(Intent(this, locator::class.java))
+        })
+
     }
 }
