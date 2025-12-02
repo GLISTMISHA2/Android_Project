@@ -12,7 +12,6 @@
         android:id="@+id/Button_сalculator"
         android:layout_width="345dp"
         android:layout_height="76dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="264dp"
         android:backgroundTint="#FF9800"
         android:text="Калькулятор"
@@ -21,6 +20,7 @@
         android:textSize="30sp"
         android:textStyle="normal"
         app:cornerRadius="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +28,7 @@
         android:id="@+id/Button_mediaplayer"
         android:layout_width="345dp"
         android:layout_height="76dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#FF1901"
         android:text="Медиаплеер"
         android:textAlignment="center"
@@ -37,7 +36,24 @@
         android:textSize="30sp"
         android:textStyle="normal"
         app:cornerRadius="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Button_сalculator" />
+
+    <Button
+        android:id="@+id/Button_geo"
+        android:layout_width="345dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Геолокация"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="normal"
+        app:cornerRadius="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button_mediaplayer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

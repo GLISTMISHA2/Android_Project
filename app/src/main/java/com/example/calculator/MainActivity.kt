@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val Button_calculator = findViewById<Button>(R.id.Button_сalculator)
-        val Button_mediaplayer = findViewById<Button>(R.id.Button_mediaplayer)
+        var Button_calculator = findViewById<Button>(R.id.Button_сalculator)
+        var Button_mediaplayer = findViewById<Button>(R.id.Button_mediaplayer)
 
         Button_calculator.setOnClickListener({
             startActivity(Intent(this, Calc::class.java))
