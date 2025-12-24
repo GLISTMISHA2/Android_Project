@@ -47,7 +47,7 @@ class media : AppCompatActivity() {
     fun load_Music_Files() {
         val download = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)
         download.listFiles().forEach { file ->
-            if (file.name.endsWith(".mp3")) {
+            if (!file.isDirectory && file.name.endsWith(".mp3")) {
                 musicFiles.add(file)
             }
         }
@@ -183,7 +183,6 @@ class media : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 mediaPlayer.seekTo(seekBar.progress)
                 updateSeekBar()
-                mediaPlayer.start()
             }
         })
 
