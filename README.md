@@ -1,6 +1,6 @@
 # Android_Project
 Синица Михаил ИКС-433
-
+Репо с сервером - https://github.com/GLISTMISHA2/server-client.git
 ## Практическая работа №8 "Работа с сокетами (ZMQ). Передача данных от Android к PC"
 
 ### Цель
@@ -22,6 +22,7 @@
     - Android - Сделать c merge request с новым функционалом
     - Server - добавить новый коммит, обновить удаленный репозиторий.
 # Результаты: 
+<img width="578" height="1280" alt="image" src="https://github.com/user-attachments/assets/22ac2d71-a15f-425e-ad3c-dd8833e45b9a" />
 
 ## Практическая работа №6 "Локация"
 
@@ -41,6 +42,7 @@
 5. При каждом обновлении местоположения записывать данные в файл
    
 # Результаты: 
+<img width="591" height="1202" alt="image" src="https://github.com/user-attachments/assets/33c07392-09aa-4411-9d30-871e2f4b5172" />
 
 ## Практическая работа №5 "Медиаплеер"
 
@@ -52,6 +54,7 @@
 5. Отображение списка треков на экране Activity.
    
 # Результаты: 
+<img width="591" height="1232" alt="image" src="https://github.com/user-attachments/assets/fa8a29ce-46b9-4aae-8801-6956672059ce" />
 
 ## Практическая работа №4 ”Калькулятор"
 
@@ -71,6 +74,7 @@
 5. Результат становится новым первым числом для следующих операций
 
 # Результаты: 
+<img width="591" height="1200" alt="image" src="https://github.com/user-attachments/assets/c4a067d5-56c8-4cd0-a8fe-74f61af6c226" />
 
 ## Null safety
 Переменные Kotlin по умолчанию не могут содержать Null значения. Это означает, что следующий фрагмент недействителен:
